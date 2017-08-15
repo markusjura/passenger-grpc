@@ -8,7 +8,7 @@ package io.moia
 
 import org.apache.logging.log4j.Logger
 
-package object mobilegateway {
+package object passenger {
 
   type Traversable[+A] = scala.collection.immutable.Traversable[A]
   type Iterable[+A]    = scala.collection.immutable.Iterable[A]

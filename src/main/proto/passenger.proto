@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package io.moia.mobilegateway;
+package io.moia;
 
-service Booking {
-  // Books a trips
+service Passenger {
+  // Books a trip
   rpc BookTrip(BookingRequest) returns (BookingResponse) {}
 
   // Retrieves current location of the arriving vehicle (as a stream)

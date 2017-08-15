@@ -4,13 +4,14 @@ import de.heikoseeberger.sbtheader.HeaderPattern
 // Projects
 // *****************************************************************************
 
-lazy val `mobile-gateway` =
+lazy val `passenger-server-grpc` =
   project
     .in(file("."))
     .enablePlugins(AutomateHeaderPlugin)
     .settings(settings)
     .settings(
       libraryDependencies ++= Seq(
+        library.akkaStream,
         library.log4jApi,
         library.log4jCore,
         library.log4jSlf4jImpl,
@@ -28,21 +29,26 @@ lazy val `mobile-gateway` =
 lazy val library =
   new {
     object Version {
+      val akka           = "2.5.4"
       val grpcJava       = "1.4.0"
       val log4j          = "2.8.2"
       val mockito        = "2.8.47"
       val scalaCheck     = "1.13.5"
+      val scalaPb        = com.trueaccord.scalapb.compiler.Version.scalapbVersion
       val scalaTest      = "3.0.3"
       val typesafeConfig = "1.3.1"
     }
-    val grpcNetty      = "io.grpc"                  %  "grpc-netty"       % Version.grpcJava
-    val log4jApi       = "org.apache.logging.log4j" %  "log4j-api"        % Version.log4j
-    val log4jCore      = "org.apache.logging.log4j" %  "log4j-core"       % Version.log4j
-    val log4jSlf4jImpl = "org.apache.logging.log4j" %  "log4j-slf4j-impl" % Version.log4j
-    val mockito        = "org.mockito"              %  "mockito-core"     % Version.mockito
-    val scalaCheck     = "org.scalacheck"           %% "scalacheck"       % Version.scalaCheck
-    val scalaTest      = "org.scalatest"            %% "scalatest"        % Version.scalaTest
-    val typesafeConfig = "com.typesafe"             %  "config"           % Version.typesafeConfig
+    val akkaStream         = "com.typesafe.akka"        %% "akka-stream"          % Version.akka
+    val grpcNetty          = "io.grpc"                  %  "grpc-netty"           % Version.grpcJava
+    val log4jApi           = "org.apache.logging.log4j" %  "log4j-api"            % Version.log4j
+    val log4jCore          = "org.apache.logging.log4j" %  "log4j-core"           % Version.log4j
+    val log4jSlf4jImpl     = "org.apache.logging.log4j" %  "log4j-slf4j-impl"     % Version.log4j
+    val mockito            = "org.mockito"              %  "mockito-core"         % Version.mockito
+    val scalaCheck         = "org.scalacheck"           %% "scalacheck"           % Version.scalaCheck
+    val scalaPbRuntime     = "com.trueaccord.scalapb"   %% "scalapb-runtime"      % Version.scalaPb % "protobuf"
+    val scalaPbRuntimeGrpc = "com.trueaccord.scalapb"   %% "scalapb-runtime-grpc" % Version.scalaPb
+    val scalaTest          = "org.scalatest"            %% "scalatest"            % Version.scalaTest
+    val typesafeConfig     = "com.typesafe"             %  "config"               % Version.typesafeConfig
   }
 
 // *****************************************************************************
@@ -110,14 +116,13 @@ lazy val headerSettings =
     )
   )
 
-import com.trueaccord.scalapb.compiler.Version.scalapbVersion
 lazy val pbSettings =
   Seq(
     PB.protoSources.in(Compile) := Seq(sourceDirectory.in(Compile).value / "proto"),
     PB.targets.in(Compile) := Seq(scalapb.gen() -> sourceManaged.in(Compile).value),
     libraryDependencies ++= Seq(
-      "com.trueaccord.scalapb" %% "scalapb-runtime"      % scalapbVersion % "protobuf",
-      "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % scalapbVersion,
+      library.scalaPbRuntime,
+      library.scalaPbRuntimeGrpc,
       library.grpcNetty
     )
   )
