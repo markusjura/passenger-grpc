@@ -6,47 +6,38 @@
 
 package io.moia.passenger.server
 
-import java.util.concurrent.atomic.AtomicInteger
-import java.util.concurrent.{Executors, TimeUnit}
-
+import akka.actor.ActorSystem
+import akka.stream.scaladsl.Flow
+import akka.stream.{ ActorMaterializer, ThrottleMode }
 import io.grpc.stub.StreamObserver
 import io.moia.passenger.{BookingRequest, BookingResponse, Location, LocationRequest}
-import io.moia.passenger.PassengerGrpc.Passenger
+import io.moia.passenger.PassengerGrpc
 import org.apache.logging.log4j.LogManager
 
 import scala.concurrent.Future
+import scala.concurrent.duration._
 
-object PassengerService {
-  val InitialDelayMs = 0L
-  val IntervalMs     = 1000L
-  val RepeatForSeconds = 30
-}
+class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passenger {
 
-class PassengerService extends Passenger {
+  import system.dispatcher
 
-  import PassengerService._
-
-  implicit val log = LogManager.getLogger(getClass())
+  private implicit val mat = ActorMaterializer()
+  private implicit val log = LogManager.getLogger(getClass())
 
   override def bookTrip(request: BookingRequest): Future[BookingResponse] = {
-    Future.successful(BookingResponse("markusjura", BookingResponse.Status.OK))
+    Future.successful(BookingResponse(request.userId, BookingResponse.Status.OK))
   }
 
   override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit = {
-    val scheduler = Executors.newSingleThreadScheduledExecutor()
-    val tick = new Runnable {
-      val counter = new AtomicInteger(RepeatForSeconds)
-      def run() =
-        if (counter.getAndDecrement() >= 0) {
-          val currentLocation = Location(1.0, 1.0)
-          log.info(s"Send current location: $currentLocation")
-          responseObserver.onNext(currentLocation)
-        } else {
-          scheduler.shutdown()
-          responseObserver.onCompleted()
+    val handler =
+      Flow[BookingRequest]
+        .throttle(1, 3 seconds, 1, ThrottleMode.shaping)
+        .map {
+          _ =>
+            val currentLocation = Location(Some(1.0), Some(1.0))
+            log.info(s"Send current location: $currentLocation")
+            currentLocation
         }
-    }
-
-    scheduler.scheduleAtFixedRate(tick, InitialDelayMs, IntervalMs, TimeUnit.MILLISECONDS)
+    RequestObserver(handler, responseObserver)
   }
 }

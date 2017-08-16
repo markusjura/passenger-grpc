@@ -22,7 +22,7 @@ object PassengerApp {
   private val serverPort = config.getInt("passenger.service.port")
 
   def main(args: Array[String]): Unit = {
-    implicit val system = ActorSystem()
+    implicit val system = ActorSystem("passenger")
     ServerBuilder
       .forPort(serverPort)
       .addService(bindService(new PassengerService, system.dispatcher))
