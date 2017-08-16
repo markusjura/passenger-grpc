@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package io.moia;
+
+import "google/protobuf/wrappers.proto";
+
+service Passenger {
+  // Books a trip
+  rpc BookTrip(BookingRequest) returns (BookingResponse) {}
+
+  // Retrieves current location of the arriving vehicle (as a stream)
+  rpc TrackVehicle(LocationRequest) returns (stream Location) {}
+}
+
+
+// BookTrip messages
+message BookingRequest {
+  google.protobuf.StringValue userId = 1;
+  google.protobuf.Int32Value passengers = 2;
+  Address pickupAddress = 3;
+  Address destinationAddress = 4;
+}
+
+message BookingResponse {
+  enum Status {
+    OK = 0;
+    NOT_WITHIN_SERVICE_RANGE = 1;
+  }
+
+  google.protobuf.StringValue userId = 1;
+  Status status = 2;
+}
+
+
+// GetCurrentLocation messages
+message LocationRequest {
+  google.protobuf.StringValue userId = 1;
+}
+
+
+// Common messages
+message Address {
+  google.protobuf.StringValue street = 1;
+  google.protobuf.StringValue city = 2;
+  Location location = 3;
+}
+
+message Location {
+  google.protobuf.DoubleValue lat = 1;
+  google.protobuf.DoubleValue lon = 2;
+}
