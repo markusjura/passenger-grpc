@@ -17,8 +17,8 @@
 package io.moia.passenger.server
 
 import akka.actor.ActorSystem
-import akka.stream.scaladsl.Flow
-import akka.stream.{ ActorMaterializer, ThrottleMode }
+import akka.stream.scaladsl.{Flow, Source}
+import akka.stream.ActorMaterializer
 import io.grpc.stub.StreamObserver
 import io.moia.passenger.{BookingRequest, BookingResponse, Location, LocationRequest}
 import io.moia.passenger.PassengerGrpc
@@ -29,8 +29,6 @@ import scala.concurrent.duration._
 
 class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passenger {
 
-  import system.dispatcher
-
   private implicit val mat = ActorMaterializer()
   private implicit val log = LogManager.getLogger(getClass())
 
@@ -38,16 +36,8 @@ class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passe
     Future.successful(BookingResponse(request.userId, BookingResponse.Status.OK))
   }
 
-  override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit = {
-    val handler =
-      Flow[BookingRequest]
-        .throttle(1, 3 seconds, 1, ThrottleMode.shaping)
-        .map {
-          _ =>
-            val currentLocation = Location(Some(1.0), Some(1.0))
-            log.info(s"Send current location: $currentLocation")
-            currentLocation
-        }
-    RequestObserver(handler, responseObserver)
-  }
+  override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit =
+    Source
+      .tick(1 second, 1 second, Location(Some(1.0), Some(1.0)))
+      .runForeach(responseObserver.onNext)
 }
