@@ -17,17 +17,34 @@
 package io.moia.passenger.server
 
 import akka.actor.ActorSystem
-import akka.stream.scaladsl.{Flow, Source}
-import akka.stream.ActorMaterializer
+import akka.stream.scaladsl.Source
+import akka.stream.{ActorMaterializer, ThrottleMode}
 import io.grpc.stub.StreamObserver
-import io.moia.passenger.{BookingRequest, BookingResponse, Location, LocationRequest}
-import io.moia.passenger.PassengerGrpc
+import io.moia.passenger._
 import org.apache.logging.log4j.LogManager
 
 import scala.concurrent.Future
 import scala.concurrent.duration._
 
+object PassengerService {
+
+  val VehicleLocations = List(
+    Location(Some(53.557471), Some(10.003938)),
+    Location(Some(53.557318), Some(10.001857)),
+    Location(Some(53.557344), Some(9.999733)),
+    Location(Some(53.557866), Some(9.997544)),
+    Location(Some(53.558351), Some(9.995613)),
+    Location(Some(53.558708), Some(9.994347)),
+    Location(Some(53.559065), Some(9.995205)),
+    Location(Some(53.559740), Some(9.995935)),
+    Location(Some(53.560938), Some(9.996707)),
+    Location(Some(53.561970), Some(9.997351))
+  )
+}
+
 class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passenger {
+
+  import PassengerService._
 
   private implicit val mat = ActorMaterializer()
   private implicit val log = LogManager.getLogger(getClass())
@@ -37,7 +54,7 @@ class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passe
   }
 
   override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit =
-    Source
-      .tick(1 second, 1 second, Location(Some(1.0), Some(1.0)))
+    Source(VehicleLocations)
+      .throttle(1, 1 second, 1, ThrottleMode.Shaping)
       .runForeach(responseObserver.onNext)
 }
