@@ -2,7 +2,7 @@
 // Projects
 // *****************************************************************************
 
-version := "1.0.0"
+version := IO.read(file("../proto/version"))
 
 lazy val `passenger-proto-scala` =
   project
@@ -59,7 +59,7 @@ lazy val commonSettings =
 
 lazy val pbSettings =
   Seq(
-    PB.protoSources.in(Compile) := Seq(file("../proto").getCanonicalFile),
+    PB.protoSources.in(Compile) := Seq(file("..") / "proto"),
     PB.targets.in(Compile) := Seq(scalapb.gen() -> sourceManaged.in(Compile).value),
     libraryDependencies ++= Seq(
       library.scalaPbRuntime,

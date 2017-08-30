@@ -5,14 +5,20 @@ option csharp_namespace = "Moia.Io";
 
 import "google/protobuf/wrappers.proto";
 
+// Services
 service Passenger {
   // Books a trip
   rpc BookTrip(BookingRequest) returns (BookingResponse) {}
 
   // Retrieves current location of the arriving vehicle (as a stream)
   rpc TrackVehicle(LocationRequest) returns (stream Location) {}
+
+  // Client sends a ping as a stream and the server responds with a pong message
+  rpc Echo(stream Ping) returns (stream Pong) {}
 }
 
+
+// Message Protocol
 
 // BookTrip messages
 message BookingRequest {
@@ -33,9 +39,18 @@ message BookingResponse {
 }
 
 
-// GetCurrentLocation messages
+// TrackVehicle messages
 message LocationRequest {
   google.protobuf.StringValue userId = 1;
+}
+
+// Echo messages
+message Ping {
+  google.protobuf.StringValue message = 0;
+}
+
+message Pong {
+  google.protobuf.StringValue message = 0;
 }
 
 
