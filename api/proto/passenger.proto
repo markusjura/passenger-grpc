@@ -46,11 +46,11 @@ message LocationRequest {
 
 // Echo messages
 message Ping {
-  google.protobuf.StringValue message = 0;
+  google.protobuf.StringValue message = 1;
 }
 
 message Pong {
-  google.protobuf.StringValue message = 0;
+  google.protobuf.StringValue message = 1;
 }
 
 
