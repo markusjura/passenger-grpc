@@ -33,5 +33,4 @@ package object passenger {
     */
   def debug(msg: => String)(implicit log: Logger): Unit =
     if (log.isDebugEnabled) log.debug(msg)
-
 }

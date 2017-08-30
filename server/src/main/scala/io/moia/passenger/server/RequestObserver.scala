@@ -16,38 +16,18 @@
 
 package io.moia.passenger.server
 
-import akka.stream.QueueOfferResult.{
-Dropped,
-Enqueued,
-QueueClosed,
-Failure => OfferFailure
-}
+import akka.stream.QueueOfferResult.{Dropped, Enqueued, QueueClosed, Failure => OfferFailure}
 import akka.stream.scaladsl.{ Flow, Sink, Source, SourceQueueWithComplete }
 import akka.stream.{ Materializer, OverflowStrategy }
-import io.grpc.stub.{CallStreamObserver, StreamObserver}
-
+import io.grpc.stub.{ CallStreamObserver, StreamObserver }
 import scala.concurrent.ExecutionContext
-import scala.util.{Failure, Success}
+import scala.util.{ Failure, Success }
 
 /**
   * Bridge between server-side gRPC and Akka Streams. Executes back-pressure
   * onto the gRPC client.
   */
 object RequestObserver {
-
-  /**
-    * Implicitly converts a stream observer for responses to a more specific
-    * `CallStreamObserver` simply by downcasting. This seems to be safe, as gRPC
-    * seems to use the more specific `CallStreamObserver` when providing stream
-    * observer for responses.
-    *
-    * @param responseObserver stream observer for responses provided by gRPC
-    * @tparam A response type
-    * @return stream observer for responses downcasted to `CallStreamObserver[A]`
-    */
-  private implicit def toCallStreamObserver[A](
-    responseObserver: StreamObserver[A]): CallStreamObserver[A] =
-    responseObserver.asInstanceOf[CallStreamObserver[A]]
 
   /**
     * Create a server-side gRPC stream observer for requests.
@@ -62,7 +42,7 @@ object RequestObserver {
     * @return back-pressured server-side gRPC stream observer for requests
     */
   def apply[A, B](handler: Flow[A, B, Any],
-    responseObserver: StreamObserver[B],
+    responseObserver: CallStreamObserver[B],
     requestBufferSize: Int = 1)(
     implicit ec: ExecutionContext,
     mat: Materializer): StreamObserver[A] = {
@@ -116,4 +96,18 @@ object RequestObserver {
 
     requestSource.via(handler).to(responseSink).run()
   }
+
+  /**
+    * Implicitly converts a stream observer for responses to a more specific
+    * `CallStreamObserver` simply by downcasting. This seems to be safe, as gRPC
+    * seems to use the more specific `CallStreamObserver` when providing stream
+    * observer for responses.
+    *
+    * @param responseObserver stream observer for responses provided by gRPC
+    * @tparam A response type
+    * @return stream observer for responses downcasted to `CallStreamObserver[A]`
+    */
+  implicit def toCallStreamObserver[A](
+    responseObserver: StreamObserver[A]): CallStreamObserver[A] =
+    responseObserver.asInstanceOf[CallStreamObserver[A]]
 }

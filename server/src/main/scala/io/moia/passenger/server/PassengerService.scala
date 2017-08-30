@@ -17,7 +17,7 @@
 package io.moia.passenger.server
 
 import akka.actor.ActorSystem
-import akka.stream.scaladsl.Source
+import akka.stream.scaladsl.{Flow, Source}
 import akka.stream.{ActorMaterializer, ThrottleMode}
 import io.grpc.stub.StreamObserver
 import io.moia.passenger._
@@ -45,6 +45,8 @@ object PassengerService {
 class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passenger {
 
   import PassengerService._
+  import system.dispatcher
+  import RequestObserver.toCallStreamObserver
 
   private implicit val mat = ActorMaterializer()
   private implicit val log = LogManager.getLogger(getClass())
@@ -57,4 +59,12 @@ class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passe
     Source(VehicleLocations)
       .throttle(1, 1 second, 1, ThrottleMode.Shaping)
       .runForeach(responseObserver.onNext)
+
+  override def echo(responseObserver: StreamObserver[Pong]): StreamObserver[Ping] = {
+    val handler =
+      Flow[Ping]
+        .throttle(1, 1.second, 1, ThrottleMode.shaping)
+        .map(ping => Pong(ping.message.map(msg => s"Server response to message: $msg")))
+    RequestObserver(handler, responseObserver)
+  }
 }
