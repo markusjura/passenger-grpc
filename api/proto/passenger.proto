@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package io.moia;
+option csharp_namespace = "Moia.Io";
 
 import "google/protobuf/wrappers.proto";
 
