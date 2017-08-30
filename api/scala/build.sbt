@@ -2,7 +2,7 @@
 // Projects
 // *****************************************************************************
 
-version := IO.read(file("../proto/version"))
+version := "1.0.0"
 
 lazy val `passenger-proto-scala` =
   project
