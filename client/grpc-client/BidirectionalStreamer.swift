@@ -17,14 +17,13 @@ class BidirectionalStreamer  {
 
   init() {
     setupServices()
-    start()
   }
 
-  func start() {
+  public func start() {
     echoRequest()
   }
 
-  func stop() {
+  public func stop() {
     streaming = false
     echoRequest()
   }
@@ -50,7 +49,9 @@ class BidirectionalStreamer  {
     }
   }
 
+  // Should get response here
   func receiveUpdateMessages() throws -> Void {
+    print("Hit the response handler")
     guard let updateCall = echoCall else {
       return
     }

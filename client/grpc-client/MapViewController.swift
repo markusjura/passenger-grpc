@@ -41,7 +41,6 @@ class MapViewController: UIViewController {
 
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    streamer?.stop()
   }
 
   func centerMapOnLocation(location: CLLocation) {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D5B40921F5F0FD400788C2A /* CgRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5B408B1F5F0FD400788C2A /* CgRPC.framework */; };
+		2D5B40931F5F0FD900788C2A /* BoringSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5B408D1F5F0FD400788C2A /* BoringSSL.framework */; };
+		2D5B40941F5F0FDE00788C2A /* gRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5B408F1F5F0FD400788C2A /* gRPC.framework */; };
+		2D5B40961F5F187000788C2A /* PingPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B40951F5F187000788C2A /* PingPongViewController.swift */; };
 		36B376CE4FE719FFA8C80B75 /* Pods_grpc_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA551FCA3F089DDC49AB8F4 /* Pods_grpc_client.framework */; };
 		CD34C0D21F45EAF700290095 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34C0D11F45EAF700290095 /* AppDelegate.swift */; };
 		CD34C0D41F45EAF700290095 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34C0D31F45EAF700290095 /* RootViewController.swift */; };
@@ -22,59 +26,57 @@
 		CD95B5E31F59D3EB00924CA8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5E21F59D3EB00924CA8 /* MapViewController.swift */; };
 		CD95B5E61F59F76800924CA8 /* UnidirectionalStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5E51F59F76800924CA8 /* UnidirectionalStreamer.swift */; };
 		CD95B5E81F59F7DE00924CA8 /* UnaryRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5E71F59F7DE00924CA8 /* UnaryRequester.swift */; };
-		CDDA3ACB1F45EC3E00536FE1 /* CgRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDA3AB91F45EC3600536FE1 /* CgRPC.framework */; };
-		CDDA3ACC1F45EC4100536FE1 /* BoringSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDA3ABB1F45EC3600536FE1 /* BoringSSL.framework */; };
-		CDDA3ACD1F45EC4600536FE1 /* gRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDA3ABD1F45EC3600536FE1 /* gRPC.framework */; };
 		CDFBE4601F45ED8C009C091A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDFBE45F1F45ED8C009C091A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CDDA3AB41F45EC3600536FE1 /* PBXContainerItemProxy */ = {
+		2D5B40861F5F0FD400788C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = OBJ_803;
+			remoteGlobalIDString = OBJ_929;
 			remoteInfo = "zlib-example";
 		};
-		CDDA3AB61F45EC3600536FE1 /* PBXContainerItemProxy */ = {
+		2D5B40881F5F0FD400788C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = OBJ_804;
+			remoteGlobalIDString = OBJ_930;
 			remoteInfo = Czlib;
 		};
-		CDDA3AB81F45EC3600536FE1 /* PBXContainerItemProxy */ = {
+		2D5B408A1F5F0FD400788C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = OBJ_805;
+			remoteGlobalIDString = OBJ_931;
 			remoteInfo = CgRPC;
 		};
-		CDDA3ABA1F45EC3600536FE1 /* PBXContainerItemProxy */ = {
+		2D5B408C1F5F0FD400788C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = OBJ_806;
+			remoteGlobalIDString = OBJ_932;
 			remoteInfo = BoringSSL;
 		};
-		CDDA3ABC1F45EC3600536FE1 /* PBXContainerItemProxy */ = {
+		2D5B408E1F5F0FD400788C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = OBJ_807;
+			remoteGlobalIDString = OBJ_933;
 			remoteInfo = gRPC;
 		};
-		CDDA3ABE1F45EC3600536FE1 /* PBXContainerItemProxy */ = {
+		2D5B40901F5F0FD400788C2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = OBJ_808;
+			remoteGlobalIDString = OBJ_934;
 			remoteInfo = gRPCTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1A08EC7EAE3EA816BA08D12C /* Pods-grpc-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-client.release.xcconfig"; path = "Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client.release.xcconfig"; sourceTree = "<group>"; };
+		2D5B40951F5F187000788C2A /* PingPongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingPongViewController.swift; path = "grpc-client/PingPongViewController.swift"; sourceTree = SOURCE_ROOT; };
 		3BA551FCA3F089DDC49AB8F4 /* Pods_grpc_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grpc_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4F301930E37F10AC587045 /* Pods-grpc-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client.debug.xcconfig"; sourceTree = "<group>"; };
 		CD34C0CE1F45EAF700290095 /* grpc-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "grpc-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,10 +104,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5B40941F5F0FDE00788C2A /* gRPC.framework in Frameworks */,
+				2D5B40931F5F0FD900788C2A /* BoringSSL.framework in Frameworks */,
+				2D5B40921F5F0FD400788C2A /* CgRPC.framework in Frameworks */,
 				CD95B5E11F59D26600924CA8 /* MapKit.framework in Frameworks */,
-				CDDA3ACD1F45EC4600536FE1 /* gRPC.framework in Frameworks */,
-				CDDA3ACC1F45EC4100536FE1 /* BoringSSL.framework in Frameworks */,
-				CDDA3ACB1F45EC3E00536FE1 /* CgRPC.framework in Frameworks */,
 				36B376CE4FE719FFA8C80B75 /* Pods_grpc_client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +159,7 @@
 				CD95B5E41F59F74500924CA8 /* grpc connections */,
 				CDDA3ACE1F45EC7000536FE1 /* Protocol Buffer */,
 				CD34C0D11F45EAF700290095 /* AppDelegate.swift */,
+				2D5B40951F5F187000788C2A /* PingPongViewController.swift */,
 				CD3A6FC21F5C465500FB6D6E /* NameRequestViewController.swift */,
 				CD34C0D31F45EAF700290095 /* RootViewController.swift */,
 				CD95B5E21F59D3EB00924CA8 /* MapViewController.swift */,
@@ -189,12 +192,12 @@
 		CDDA3AAC1F45EC3600536FE1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDDA3AB51F45EC3600536FE1 /* zlib-example */,
-				CDDA3AB71F45EC3600536FE1 /* Czlib.framework */,
-				CDDA3AB91F45EC3600536FE1 /* CgRPC.framework */,
-				CDDA3ABB1F45EC3600536FE1 /* BoringSSL.framework */,
-				CDDA3ABD1F45EC3600536FE1 /* gRPC.framework */,
-				CDDA3ABF1F45EC3600536FE1 /* gRPCTests.xctest */,
+				2D5B40871F5F0FD400788C2A /* zlib-example */,
+				2D5B40891F5F0FD400788C2A /* Czlib.framework */,
+				2D5B408B1F5F0FD400788C2A /* CgRPC.framework */,
+				2D5B408D1F5F0FD400788C2A /* BoringSSL.framework */,
+				2D5B408F1F5F0FD400788C2A /* gRPC.framework */,
+				2D5B40911F5F0FD400788C2A /* gRPCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,46 +276,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CDDA3AB51F45EC3600536FE1 /* zlib-example */ = {
+		2D5B40871F5F0FD400788C2A /* zlib-example */ = {
 			isa = PBXReferenceProxy;
 			fileType = text;
 			path = "zlib-example";
-			remoteRef = CDDA3AB41F45EC3600536FE1 /* PBXContainerItemProxy */;
+			remoteRef = 2D5B40861F5F0FD400788C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CDDA3AB71F45EC3600536FE1 /* Czlib.framework */ = {
+		2D5B40891F5F0FD400788C2A /* Czlib.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Czlib.framework;
-			remoteRef = CDDA3AB61F45EC3600536FE1 /* PBXContainerItemProxy */;
+			remoteRef = 2D5B40881F5F0FD400788C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CDDA3AB91F45EC3600536FE1 /* CgRPC.framework */ = {
+		2D5B408B1F5F0FD400788C2A /* CgRPC.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CgRPC.framework;
-			remoteRef = CDDA3AB81F45EC3600536FE1 /* PBXContainerItemProxy */;
+			remoteRef = 2D5B408A1F5F0FD400788C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CDDA3ABB1F45EC3600536FE1 /* BoringSSL.framework */ = {
+		2D5B408D1F5F0FD400788C2A /* BoringSSL.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = BoringSSL.framework;
-			remoteRef = CDDA3ABA1F45EC3600536FE1 /* PBXContainerItemProxy */;
+			remoteRef = 2D5B408C1F5F0FD400788C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CDDA3ABD1F45EC3600536FE1 /* gRPC.framework */ = {
+		2D5B408F1F5F0FD400788C2A /* gRPC.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = gRPC.framework;
-			remoteRef = CDDA3ABC1F45EC3600536FE1 /* PBXContainerItemProxy */;
+			remoteRef = 2D5B408E1F5F0FD400788C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CDDA3ABF1F45EC3600536FE1 /* gRPCTests.xctest */ = {
+		2D5B40911F5F0FD400788C2A /* gRPCTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = file;
 			path = gRPCTests.xctest;
-			remoteRef = CDDA3ABE1F45EC3600536FE1 /* PBXContainerItemProxy */;
+			remoteRef = 2D5B40901F5F0FD400788C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -393,6 +396,7 @@
 				CD3A6FC31F5C465500FB6D6E /* NameRequestViewController.swift in Sources */,
 				CD34C0D41F45EAF700290095 /* RootViewController.swift in Sources */,
 				CD3A6FCC1F5C59C700FB6D6E /* type+extensions.swift in Sources */,
+				2D5B40961F5F187000788C2A /* PingPongViewController.swift in Sources */,
 				CD34C0D21F45EAF700290095 /* AppDelegate.swift in Sources */,
 				CD95B5DD1F59D1E500924CA8 /* io.moia.client.pb.swift in Sources */,
 				CD95B5E31F59D3EB00924CA8 /* MapViewController.swift in Sources */,

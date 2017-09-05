@@ -1,37 +1,65 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "17FA4E540D742AED9936AAF864248519E083C620",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D0436C63EAA88099D659129CB3BB9EF9E1A03EF7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "17FA4E540D742AED9936AAF864248519E083C620" : 9223372036854775807,
     "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : 9223372036854775807,
-    "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0" : 9223372036854775807
+    "43BF8F9148B1F39FBDE34E7D1E69C54C78D21FCC" : 9223372036854775807,
+    "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0" : 9223372036854775807,
+    "3DA8097D366B6AFDAEA91946C35253AA1EBC780B" : 9223372036854775807,
+    "D0436C63EAA88099D659129CB3BB9EF9E1A03EF7" : 9223372036854775807,
+    "E3472B155FC961329A2EA7BFAD3AFAE6EFBD63E5" : 9223372036854775807,
+    "D591987028BFCE350CA11D7DA7F1AE9C4373C207" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4BA126BF-BB8E-4D4A-8E7E-01721C43BF56",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "17FA4E540D742AED9936AAF864248519E083C620" : "grpc-client-poc\/",
-    "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : "grpc-client-poc\/grpc-swift\/",
-    "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0" : "grpc-client-poc\/grpc-swift\/.build\/checkouts\/zlib.git--9016602441419864029\/"
+    "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : "passenger-grpc\/client\/grpc-swift\/",
+    "43BF8F9148B1F39FBDE34E7D1E69C54C78D21FCC" : "passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/checkouts\/swift-protobuf.git--7219529775138357838\/",
+    "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0" : "passenger-grpc\/client\/grpc-swift\/.build\/checkouts\/zlib.git--9016602441419864029\/",
+    "3DA8097D366B6AFDAEA91946C35253AA1EBC780B" : "passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/checkouts\/Stencil.git-7635584243355970173\/",
+    "D0436C63EAA88099D659129CB3BB9EF9E1A03EF7" : "passenger-grpc\/",
+    "E3472B155FC961329A2EA7BFAD3AFAE6EFBD63E5" : "passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/checkouts\/PathKit.git--1865447967743163058\/",
+    "D591987028BFCE350CA11D7DA7F1AE9C4373C207" : "passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/checkouts\/Spectre.git--7655155069707042687\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "grpc-client",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "grpc-client.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "client\/grpc-client.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mo\/Documents\/grpc-client-poc\/grpc-swift\/.build\/repositories\/zlib.git--9016602441419864029",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mj\/workspace\/passenger-grpc\/client\/grpc-swift\/.build\/repositories\/zlib.git--9016602441419864029",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:moia-dev\/grpc-client-poc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mj\/workspace\/passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/repositories\/Stencil.git-7635584243355970173",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "17FA4E540D742AED9936AAF864248519E083C620"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DA8097D366B6AFDAEA91946C35253AA1EBC780B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mj\/workspace\/passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/repositories\/swift-protobuf.git--7219529775138357838",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43BF8F9148B1F39FBDE34E7D1E69C54C78D21FCC"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:grpc\/grpc-swift.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9EDDABE139EFE2CF16D7964A3F5B908927455C00"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:moia-dev\/passenger-grpc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D0436C63EAA88099D659129CB3BB9EF9E1A03EF7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mj\/workspace\/passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/repositories\/Spectre.git--7655155069707042687",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D591987028BFCE350CA11D7DA7F1AE9C4373C207"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mj\/workspace\/passenger-grpc\/client\/grpc-swift\/Plugin\/.build\/repositories\/PathKit.git--1865447967743163058",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E3472B155FC961329A2EA7BFAD3AFAE6EFBD63E5"
     }
   ]
 }

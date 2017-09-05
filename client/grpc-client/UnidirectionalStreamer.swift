@@ -129,6 +129,7 @@ class UidirectionalStreamer  {
         switch error {
         case .endOfStream:
           print("Done.")
+          self.stop()
         default:
           print("No message received. \(error)")
         }

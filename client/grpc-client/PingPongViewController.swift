@@ -10,8 +10,10 @@ import UIKit
 
 class PingPongViewController: UIViewController {
 
+    private var streamer: BidirectionalStreamer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.streamer = BidirectionalStreamer()
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +23,11 @@ class PingPongViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func startPressed(_ sender: Any) {
+        streamer?.start()
+    }
 
+    
     /*
     // MARK: - Navigation
 
