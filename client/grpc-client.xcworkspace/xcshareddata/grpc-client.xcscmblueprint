@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "17FA4E540D742AED9936AAF864248519E083C620",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "17FA4E540D742AED9936AAF864248519E083C620" : 9223372036854775807,
+    "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : 9223372036854775807,
+    "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4BA126BF-BB8E-4D4A-8E7E-01721C43BF56",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "17FA4E540D742AED9936AAF864248519E083C620" : "grpc-client-poc\/",
+    "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : "grpc-client-poc\/grpc-swift\/",
+    "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0" : "grpc-client-poc\/grpc-swift\/.build\/checkouts\/zlib.git--9016602441419864029\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "grpc-client",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "grpc-client.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/mo\/Documents\/grpc-client-poc\/grpc-swift\/.build\/repositories\/zlib.git--9016602441419864029",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0F60E66D7E602C0D2A73CA492D5073EAA8EF94B0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:moia-dev\/grpc-client-poc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "17FA4E540D742AED9936AAF864248519E083C620"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:grpc\/grpc-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9EDDABE139EFE2CF16D7964A3F5B908927455C00"
+    }
+  ]
+}
