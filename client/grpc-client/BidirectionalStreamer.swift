@@ -9,13 +9,19 @@
 import Foundation
 
 
+protocol BiDirectionStreamDelegate:class {
+  func bidirectionStreamManager(_ streamManager:BidirectionalStreamer,didReceive pong: String)
+}
+
 class BidirectionalStreamer  {
 
   private var service: Io_Moia_PassengerService?
   private var echoCall: Io_Moia_PassengerEchoCall?
   private var streaming = false
+  private var delegate: BiDirectionStreamDelegate?
 
-  init() {
+  init(delegate:BiDirectionStreamDelegate) {
+    self.delegate = delegate
     setupServices()
   }
 
@@ -25,7 +31,7 @@ class BidirectionalStreamer  {
 
   public func stop() {
     streaming = false
-    echoRequest()
+    self.service = nil
   }
 
 
@@ -51,17 +57,18 @@ class BidirectionalStreamer  {
 
   // Should get response here
   func receiveUpdateMessages() throws -> Void {
-    print("Hit the response handler")
     guard let updateCall = echoCall else {
       return
     }
     try updateCall.receive() { response, error in
       if let responseMessage = response {
         print(responseMessage.message)
+        self.handleResponse(serverResponse: responseMessage)
         try! self.receiveUpdateMessages()
       } else if let error = error {
         switch error {
         case .endOfStream:
+          self.stop()
           print("End of Stream")
         default:
           print("No message received. \(error)")
@@ -70,12 +77,18 @@ class BidirectionalStreamer  {
     }
   }
 
-
   private func sendUpdateMessage() throws -> Void {
     guard let updateCall = self.echoCall else {return}
-    let request = Io_Moia_Ping()
+    var request = Io_Moia_Ping()
+    request.message = "MOIA".rpcValue
     try updateCall.send(request, errorHandler: { error in
       print(error.localizedDescription)
     })
+  }
+
+  private func handleResponse(serverResponse:Io_Moia_Pong) {
+    DispatchQueue.main.async {
+      self.delegate?.bidirectionStreamManager(self, didReceive: serverResponse.message.value)
+    }
   }
 }

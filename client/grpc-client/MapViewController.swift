@@ -39,10 +39,6 @@ class MapViewController: UIViewController {
     streamer?.start()
   }
 
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-  }
-
   func centerMapOnLocation(location: CLLocation) {
     mapView.delegate = self
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
