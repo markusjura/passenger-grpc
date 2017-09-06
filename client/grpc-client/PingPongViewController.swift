@@ -8,34 +8,41 @@
 
 import UIKit
 
+
+
 class PingPongViewController: UIViewController {
-
-    private var streamer: BidirectionalStreamer?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.streamer = BidirectionalStreamer()
-
-        // Do any additional setup after loading the view.
+  @IBOutlet weak var pongView: UILabel! {
+    didSet{
+      pongView.alpha = 0
     }
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  private var streamer: BidirectionalStreamer?
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.streamer = BidirectionalStreamer(delegate: self)
+  }
+
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+
+  @IBAction func startPressed(_ sender: Any) {
+    streamer?.start()
+  }
+
+  func flashPongView() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.pongView.alpha = 1
+    }) { (finished) in
+      self.pongView.alpha = 0
     }
-    
-    @IBAction func startPressed(_ sender: Any) {
-        streamer?.start()
-    }
+  }
+}
 
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension PingPongViewController:BiDirectionStreamDelegate {
+  func bidirectionStreamManager(_ streamManager: BidirectionalStreamer, didReceive pong: String) {
+    self.flashPongView()
+  }
 }
