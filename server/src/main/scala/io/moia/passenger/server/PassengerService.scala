@@ -42,6 +42,9 @@ object PassengerService {
   )
 }
 
+/**
+  * Passenger service that implements the generated [[PassengerGrpc.Passenger]] service endpoints.
+  */
 class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passenger {
 
   import PassengerService._
@@ -51,15 +54,27 @@ class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passe
   private implicit val mat = ActorMaterializer()
   private implicit val log = LogManager.getLogger(getClass)
 
+  /**
+    * Trip booking endpoint (request-response).
+    * Response with the user ID from the request and an OK status.
+    */
   override def bookTrip(request: BookingRequest): Future[BookingResponse] =
     Future.successful(BookingResponse(request.userId, BookingResponse.Status.OK))
 
+  /**
+    * Track vehicle endpoint (server-push).
+    * Once the endpoint is called, each second the current vehicle location is sent back
+    */
   override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit =
     Source(VehicleLocations)
       .throttle(1, 1.second, 1, ThrottleMode.Shaping)
       .runForeach(responseObserver.onNext)
       .foreach(_ => responseObserver.onCompleted())
 
+  /**
+    * Echo endpoint (bi-directional-streaming)
+    * Once a client sends a ping, the server responds with a pong message.
+    */
   override def echo(responseObserver: StreamObserver[Pong]): StreamObserver[Ping] = {
     val handler =
         Flow[Ping]
