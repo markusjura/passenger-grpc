@@ -86,9 +86,12 @@ object RequestObserver {
             pull()
           }
           responses.pull().onComplete {
-            case Success(Some(b)) => onNextThenPull(b)
-            case Success(None)    => responseObserver.onCompleted()
-            case Failure(t)       => responseObserver.onError(t)
+            case Success(Some(b)) =>
+              onNextThenPull(b)
+            case Success(None)    =>
+              responseObserver.onCompleted()
+            case Failure(t)       =>
+              responseObserver.onError(t)
           }
         }
         pull()

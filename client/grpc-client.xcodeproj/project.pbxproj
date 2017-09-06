@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D5B40921F5F0FD400788C2A /* CgRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5B408B1F5F0FD400788C2A /* CgRPC.framework */; };
+		2D5B40931F5F0FD900788C2A /* BoringSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5B408D1F5F0FD400788C2A /* BoringSSL.framework */; };
+		2D5B40941F5F0FDE00788C2A /* gRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5B408F1F5F0FD400788C2A /* gRPC.framework */; };
+		2D5B40961F5F187000788C2A /* PingPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B40951F5F187000788C2A /* PingPongViewController.swift */; };
+		36B376CE4FE719FFA8C80B75 /* Pods_grpc_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA551FCA3F089DDC49AB8F4 /* Pods_grpc_client.framework */; };
+		CD34C0D21F45EAF700290095 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34C0D11F45EAF700290095 /* AppDelegate.swift */; };
+		CD34C0D41F45EAF700290095 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34C0D31F45EAF700290095 /* RootViewController.swift */; };
+		CD34C0D91F45EAF700290095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD34C0D81F45EAF700290095 /* Assets.xcassets */; };
+		CD34C0DC1F45EAF700290095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD34C0DA1F45EAF700290095 /* LaunchScreen.storyboard */; };
+		CD3A6FC31F5C465500FB6D6E /* NameRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A6FC21F5C465500FB6D6E /* NameRequestViewController.swift */; };
+		CD3A6FCC1F5C59C700FB6D6E /* type+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A6FCB1F5C59C700FB6D6E /* type+extensions.swift */; };
+		CD62DC3F1F5A8A59001014FB /* BidirectionalStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62DC3E1F5A8A59001014FB /* BidirectionalStreamer.swift */; };
+		CD95B5DD1F59D1E500924CA8 /* io.moia.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5DA1F59D1E500924CA8 /* io.moia.client.pb.swift */; };
+		CD95B5DE1F59D1E500924CA8 /* io.moia.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5DB1F59D1E500924CA8 /* io.moia.server.pb.swift */; };
+		CD95B5DF1F59D1E500924CA8 /* passenger.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5DC1F59D1E500924CA8 /* passenger.pb.swift */; };
+		CD95B5E11F59D26600924CA8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD95B5E01F59D26600924CA8 /* MapKit.framework */; };
+		CD95B5E31F59D3EB00924CA8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5E21F59D3EB00924CA8 /* MapViewController.swift */; };
+		CD95B5E61F59F76800924CA8 /* UnidirectionalStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5E51F59F76800924CA8 /* UnidirectionalStreamer.swift */; };
+		CD95B5E81F59F7DE00924CA8 /* UnaryRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD95B5E71F59F7DE00924CA8 /* UnaryRequester.swift */; };
+		CDFBE4601F45ED8C009C091A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDFBE45F1F45ED8C009C091A /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2D5B40861F5F0FD400788C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_929;
+			remoteInfo = "zlib-example";
+		};
+		2D5B40881F5F0FD400788C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_930;
+			remoteInfo = Czlib;
+		};
+		2D5B408A1F5F0FD400788C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_931;
+			remoteInfo = CgRPC;
+		};
+		2D5B408C1F5F0FD400788C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_932;
+			remoteInfo = BoringSSL;
+		};
+		2D5B408E1F5F0FD400788C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_933;
+			remoteInfo = gRPC;
+		};
+		2D5B40901F5F0FD400788C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_934;
+			remoteInfo = gRPCTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A08EC7EAE3EA816BA08D12C /* Pods-grpc-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-client.release.xcconfig"; path = "Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client.release.xcconfig"; sourceTree = "<group>"; };
+		2D5B40951F5F187000788C2A /* PingPongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PingPongViewController.swift; path = "grpc-client/PingPongViewController.swift"; sourceTree = SOURCE_ROOT; };
+		3BA551FCA3F089DDC49AB8F4 /* Pods_grpc_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grpc_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD4F301930E37F10AC587045 /* Pods-grpc-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client.debug.xcconfig"; sourceTree = "<group>"; };
+		CD34C0CE1F45EAF700290095 /* grpc-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "grpc-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD34C0D11F45EAF700290095 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD34C0D31F45EAF700290095 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		CD34C0D81F45EAF700290095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD34C0DB1F45EAF700290095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD34C0DD1F45EAF700290095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3A6FC21F5C465500FB6D6E /* NameRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameRequestViewController.swift; path = "grpc-client/NameRequestViewController.swift"; sourceTree = SOURCE_ROOT; };
+		CD3A6FCB1F5C59C700FB6D6E /* type+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "type+extensions.swift"; sourceTree = "<group>"; };
+		CD62DC3E1F5A8A59001014FB /* BidirectionalStreamer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidirectionalStreamer.swift; sourceTree = "<group>"; };
+		CD95B5DA1F59D1E500924CA8 /* io.moia.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = io.moia.client.pb.swift; sourceTree = "<group>"; };
+		CD95B5DB1F59D1E500924CA8 /* io.moia.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = io.moia.server.pb.swift; sourceTree = "<group>"; };
+		CD95B5DC1F59D1E500924CA8 /* passenger.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passenger.pb.swift; sourceTree = "<group>"; };
+		CD95B5E01F59D26600924CA8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CD95B5E21F59D3EB00924CA8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CD95B5E51F59F76800924CA8 /* UnidirectionalStreamer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidirectionalStreamer.swift; sourceTree = "<group>"; };
+		CD95B5E71F59F7DE00924CA8 /* UnaryRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnaryRequester.swift; sourceTree = "<group>"; };
+		CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftGRPC.xcodeproj; path = "grpc-swift/SwiftGRPC.xcodeproj"; sourceTree = "<group>"; };
+		CDFBE45F1F45ED8C009C091A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD34C0CB1F45EAF700290095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5B40941F5F0FDE00788C2A /* gRPC.framework in Frameworks */,
+				2D5B40931F5F0FD900788C2A /* BoringSSL.framework in Frameworks */,
+				2D5B40921F5F0FD400788C2A /* CgRPC.framework in Frameworks */,
+				CD95B5E11F59D26600924CA8 /* MapKit.framework in Frameworks */,
+				36B376CE4FE719FFA8C80B75 /* Pods_grpc_client.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8061683B9D00EB9292D52CDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD4F301930E37F10AC587045 /* Pods-grpc-client.debug.xcconfig */,
+				1A08EC7EAE3EA816BA08D12C /* Pods-grpc-client.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D7DA29FEF9D8F592A19627A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD95B5E01F59D26600924CA8 /* MapKit.framework */,
+				3BA551FCA3F089DDC49AB8F4 /* Pods_grpc_client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD34C0C51F45EAF700290095 = {
+			isa = PBXGroup;
+			children = (
+				CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */,
+				CD34C0D01F45EAF700290095 /* grpc-client */,
+				CD34C0CF1F45EAF700290095 /* Products */,
+				8061683B9D00EB9292D52CDD /* Pods */,
+				8D7DA29FEF9D8F592A19627A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD34C0CF1F45EAF700290095 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD34C0CE1F45EAF700290095 /* grpc-client.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD34C0D01F45EAF700290095 /* grpc-client */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A6FCA1F5C59A800FB6D6E /* extensions */,
+				CD95B5E41F59F74500924CA8 /* grpc connections */,
+				CDDA3ACE1F45EC7000536FE1 /* Protocol Buffer */,
+				CD34C0D11F45EAF700290095 /* AppDelegate.swift */,
+				2D5B40951F5F187000788C2A /* PingPongViewController.swift */,
+				CD3A6FC21F5C465500FB6D6E /* NameRequestViewController.swift */,
+				CD34C0D31F45EAF700290095 /* RootViewController.swift */,
+				CD95B5E21F59D3EB00924CA8 /* MapViewController.swift */,
+				CD34C0D81F45EAF700290095 /* Assets.xcassets */,
+				CD34C0DA1F45EAF700290095 /* LaunchScreen.storyboard */,
+				CDFBE45F1F45ED8C009C091A /* Main.storyboard */,
+				CD34C0DD1F45EAF700290095 /* Info.plist */,
+			);
+			path = "grpc-client";
+			sourceTree = "<group>";
+		};
+		CD3A6FCA1F5C59A800FB6D6E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A6FCB1F5C59C700FB6D6E /* type+extensions.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		CD95B5E41F59F74500924CA8 /* grpc connections */ = {
+			isa = PBXGroup;
+			children = (
+				CD95B5E51F59F76800924CA8 /* UnidirectionalStreamer.swift */,
+				CD95B5E71F59F7DE00924CA8 /* UnaryRequester.swift */,
+				CD62DC3E1F5A8A59001014FB /* BidirectionalStreamer.swift */,
+			);
+			name = "grpc connections";
+			sourceTree = "<group>";
+		};
+		CDDA3AAC1F45EC3600536FE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D5B40871F5F0FD400788C2A /* zlib-example */,
+				2D5B40891F5F0FD400788C2A /* Czlib.framework */,
+				2D5B408B1F5F0FD400788C2A /* CgRPC.framework */,
+				2D5B408D1F5F0FD400788C2A /* BoringSSL.framework */,
+				2D5B408F1F5F0FD400788C2A /* gRPC.framework */,
+				2D5B40911F5F0FD400788C2A /* gRPCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDDA3ACE1F45EC7000536FE1 /* Protocol Buffer */ = {
+			isa = PBXGroup;
+			children = (
+				CD95B5DA1F59D1E500924CA8 /* io.moia.client.pb.swift */,
+				CD95B5DB1F59D1E500924CA8 /* io.moia.server.pb.swift */,
+				CD95B5DC1F59D1E500924CA8 /* passenger.pb.swift */,
+			);
+			path = "Protocol Buffer";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD34C0CD1F45EAF700290095 /* grpc-client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD34C0E01F45EAF700290095 /* Build configuration list for PBXNativeTarget "grpc-client" */;
+			buildPhases = (
+				30B1589A5E3C4B0B0B3EFBE5 /* [CP] Check Pods Manifest.lock */,
+				CD34C0CA1F45EAF700290095 /* Sources */,
+				CD34C0CB1F45EAF700290095 /* Frameworks */,
+				CD34C0CC1F45EAF700290095 /* Resources */,
+				1DCEA2C114F3811D51C3D3E1 /* [CP] Embed Pods Frameworks */,
+				602F544E7218945EAC26D7E2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "grpc-client";
+			productName = "grpc-client";
+			productReference = CD34C0CE1F45EAF700290095 /* grpc-client.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD34C0C61F45EAF700290095 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "MOIA GmbH";
+				TargetAttributes = {
+					CD34C0CD1F45EAF700290095 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CD34C0C91F45EAF700290095 /* Build configuration list for PBXProject "grpc-client" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD34C0C51F45EAF700290095;
+			productRefGroup = CD34C0CF1F45EAF700290095 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CDDA3AAC1F45EC3600536FE1 /* Products */;
+					ProjectRef = CDDA3AAB1F45EC3600536FE1 /* SwiftGRPC.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CD34C0CD1F45EAF700290095 /* grpc-client */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2D5B40871F5F0FD400788C2A /* zlib-example */ = {
+			isa = PBXReferenceProxy;
+			fileType = text;
+			path = "zlib-example";
+			remoteRef = 2D5B40861F5F0FD400788C2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2D5B40891F5F0FD400788C2A /* Czlib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Czlib.framework;
+			remoteRef = 2D5B40881F5F0FD400788C2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2D5B408B1F5F0FD400788C2A /* CgRPC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CgRPC.framework;
+			remoteRef = 2D5B408A1F5F0FD400788C2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2D5B408D1F5F0FD400788C2A /* BoringSSL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BoringSSL.framework;
+			remoteRef = 2D5B408C1F5F0FD400788C2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2D5B408F1F5F0FD400788C2A /* gRPC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = gRPC.framework;
+			remoteRef = 2D5B408E1F5F0FD400788C2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2D5B40911F5F0FD400788C2A /* gRPCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = gRPCTests.xctest;
+			remoteRef = 2D5B40901F5F0FD400788C2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD34C0CC1F45EAF700290095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFBE4601F45ED8C009C091A /* Main.storyboard in Resources */,
+				CD34C0DC1F45EAF700290095 /* LaunchScreen.storyboard in Resources */,
+				CD34C0D91F45EAF700290095 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DCEA2C114F3811D51C3D3E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30B1589A5E3C4B0B0B3EFBE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-grpc-client-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		602F544E7218945EAC26D7E2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-grpc-client/Pods-grpc-client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD34C0CA1F45EAF700290095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD95B5E61F59F76800924CA8 /* UnidirectionalStreamer.swift in Sources */,
+				CD3A6FC31F5C465500FB6D6E /* NameRequestViewController.swift in Sources */,
+				CD34C0D41F45EAF700290095 /* RootViewController.swift in Sources */,
+				CD3A6FCC1F5C59C700FB6D6E /* type+extensions.swift in Sources */,
+				2D5B40961F5F187000788C2A /* PingPongViewController.swift in Sources */,
+				CD34C0D21F45EAF700290095 /* AppDelegate.swift in Sources */,
+				CD95B5DD1F59D1E500924CA8 /* io.moia.client.pb.swift in Sources */,
+				CD95B5E31F59D3EB00924CA8 /* MapViewController.swift in Sources */,
+				CD95B5DF1F59D1E500924CA8 /* passenger.pb.swift in Sources */,
+				CD95B5DE1F59D1E500924CA8 /* io.moia.server.pb.swift in Sources */,
+				CD62DC3F1F5A8A59001014FB /* BidirectionalStreamer.swift in Sources */,
+				CD95B5E81F59F7DE00924CA8 /* UnaryRequester.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CD34C0DA1F45EAF700290095 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD34C0DB1F45EAF700290095 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD34C0DE1F45EAF700290095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD34C0DF1F45EAF700290095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD34C0E11F45EAF700290095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD4F301930E37F10AC587045 /* Pods-grpc-client.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/grpc-swift/Sources/CgRPC/include";
+				INFOPLIST_FILE = "grpc-client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.moia.passenger.client;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CD34C0E21F45EAF700290095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A08EC7EAE3EA816BA08D12C /* Pods-grpc-client.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/grpc-swift/Sources/CgRPC/include";
+				INFOPLIST_FILE = "grpc-client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.moia.passenger.client;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD34C0C91F45EAF700290095 /* Build configuration list for PBXProject "grpc-client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD34C0DE1F45EAF700290095 /* Debug */,
+				CD34C0DF1F45EAF700290095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD34C0E01F45EAF700290095 /* Build configuration list for PBXNativeTarget "grpc-client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD34C0E11F45EAF700290095 /* Debug */,
+				CD34C0E21F45EAF700290095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD34C0C61F45EAF700290095 /* Project object */;
+}

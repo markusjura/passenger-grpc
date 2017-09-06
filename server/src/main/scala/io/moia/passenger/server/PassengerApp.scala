@@ -33,12 +33,13 @@ object PassengerApp {
 
   def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem("passenger")
+    log.info(s"Starting server on port $serverPort")
     ServerBuilder
       .forPort(serverPort)
       .addService(bindService(new PassengerService, system.dispatcher))
       .build()
       .start()
-    log.info(s"Starting server on port $serverPort")
+    log.info(s"Server has been started on port $serverPort")
     Await.ready(system.whenTerminated, Duration.Inf)
   }
 }
