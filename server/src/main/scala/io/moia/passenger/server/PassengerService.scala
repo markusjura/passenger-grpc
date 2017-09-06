@@ -51,16 +51,14 @@ class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passe
   private implicit val mat = ActorMaterializer()
   private implicit val log = LogManager.getLogger(getClass)
 
-  override def bookTrip(request: BookingRequest): Future[BookingResponse] = {
+  override def bookTrip(request: BookingRequest): Future[BookingResponse] =
     Future.successful(BookingResponse(request.userId, BookingResponse.Status.OK))
-  }
 
   override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit =
     Source(VehicleLocations)
       .throttle(1, 1.second, 1, ThrottleMode.Shaping)
       .runForeach(responseObserver.onNext)
       .foreach(_ => responseObserver.onCompleted())
-
 
   override def echo(responseObserver: StreamObserver[Pong]): StreamObserver[Ping] = {
     val handler =

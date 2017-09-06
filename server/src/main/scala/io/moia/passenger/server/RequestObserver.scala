@@ -70,9 +70,7 @@ object RequestObserver {
         new StreamObserver[A] {
           override def onError(t: Throwable) = requests.fail(t)
           override def onCompleted()         = requests.complete()
-          override def onNext(a: A)          = {
-            handleOnNext(a)
-          }
+          override def onNext(a: A)          = handleOnNext(a)
         }
       }
       Source
