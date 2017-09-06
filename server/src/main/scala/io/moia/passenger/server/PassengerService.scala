@@ -49,41 +49,24 @@ class PassengerService(implicit system: ActorSystem) extends PassengerGrpc.Passe
   import RequestObserver.toCallStreamObserver
 
   private implicit val mat = ActorMaterializer()
-  private implicit val log = LogManager.getLogger(getClass())
+  private implicit val log = LogManager.getLogger(getClass)
 
   override def bookTrip(request: BookingRequest): Future[BookingResponse] = {
     Future.successful(BookingResponse(request.userId, BookingResponse.Status.OK))
   }
 
-  override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit = {
+  override def trackVehicle(request: LocationRequest, responseObserver: StreamObserver[Location]): Unit =
     Source(VehicleLocations)
-      .throttle(1, 1 second, 1, ThrottleMode.Shaping)
+      .throttle(1, 1.second, 1, ThrottleMode.Shaping)
       .runForeach(responseObserver.onNext)
-      .foreach(_ => responseObserver.onCompleted)
-  }
+      .foreach(_ => responseObserver.onCompleted())
 
 
   override def echo(responseObserver: StreamObserver[Pong]): StreamObserver[Ping] = {
-//    val handler =
-//      Flow[Ping]
-//        .throttle(1, 1.second, 1, ThrottleMode.shaping)
-//        .map { ping =>
-//          log.info("Received ping: " + ping.message)
-//          Pong(ping.message.map(msg => s"Server response to message: $msg"))
-//        }
-
     val handler =
-      Flow[Ping]
-        .throttle(1, 1.second, 1, ThrottleMode.shaping)
-        .fold(Vector.empty[String]) {
-          case (msgs, ping) =>
-            log.info("Received ping 1")
-            msgs :+ s"Server response to message: ${ping.message}"
-        }
-        .map {
-          log.info("Received ping 2")
-          messages => Pong(Some(messages.mkString("/")))
-        }
+        Flow[Ping]
+          .throttle(1, 1.second, 1, ThrottleMode.shaping)
+          .map(ping => Pong(ping.message.map(msg => s"Server response to message: $msg")))
     RequestObserver(handler, responseObserver)
   }
 }

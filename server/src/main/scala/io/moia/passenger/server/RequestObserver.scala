@@ -70,7 +70,9 @@ object RequestObserver {
         new StreamObserver[A] {
           override def onError(t: Throwable) = requests.fail(t)
           override def onCompleted()         = requests.complete()
-          override def onNext(a: A)          = handleOnNext(a)
+          override def onNext(a: A)          = {
+            handleOnNext(a)
+          }
         }
       }
       Source
@@ -86,9 +88,12 @@ object RequestObserver {
             pull()
           }
           responses.pull().onComplete {
-            case Success(Some(b)) => onNextThenPull(b)
-            case Success(None)    => responseObserver.onCompleted()
-            case Failure(t)       => responseObserver.onError(t)
+            case Success(Some(b)) =>
+              onNextThenPull(b)
+            case Success(None)    =>
+              responseObserver.onCompleted()
+            case Failure(t)       =>
+              responseObserver.onError(t)
           }
         }
         pull()
